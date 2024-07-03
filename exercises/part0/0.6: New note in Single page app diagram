@@ -1,0 +1,12 @@
+```mermaid
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note right of browser: Request Payload [{content: "single page app new note test", date: "2024-07-03T03:31:15.895Z"}]
+    
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    server-->>browser: [201 - Created] {"message":"note created"}
+    deactivate server
+```
