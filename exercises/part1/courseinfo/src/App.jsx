@@ -14,19 +14,32 @@ const Header = (props) => {
   );
 };
 
-const Content = () => {
+const Part = (props) => {
   return (
     <>
       <p>
-        {courseContent[0].part} {courseContent[0].exercises}
-      </p>
-      <p>
-        {courseContent[1].part} {courseContent[1].exercises}
-      </p>
-      <p>
-        {courseContent[2].part} {courseContent[2].exercises}
+        {props.title} {props.exercises}
       </p>
     </>
+  );
+};
+
+const Content = () => {
+  return (
+    <div>
+      <Part
+        title={courseContent[0].part}
+        exercises={courseContent[0].exercises}
+      />
+      <Part
+        title={courseContent[1].part}
+        exercises={courseContent[1].exercises}
+      />
+      <Part
+        title={courseContent[2].part}
+        exercises={courseContent[2].exercises}
+      />
+    </div>
   );
 };
 
